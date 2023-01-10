@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/bash
 # -*- coding: utf-8 -*-
 set -e
 
@@ -52,11 +52,6 @@ sudo nala install -y --no-install-recommends pkg-config libssl-dev git
 sudo nala install -y python3-venv python3-pip python3-cachecontrol python3-poetry
 python3 -m pip install pylint mypy perflint -U
 
-# Re-Upgrade
+# Re-Upgrade before cleanup
 sudo nala upgrade -y
 
-# Clean up
-sudo nala autoremove -y
-sudo nala autopurge -y
-sudo nala clean --lists
-sudo rm -rf /tmp/*
