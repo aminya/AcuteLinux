@@ -12,7 +12,7 @@ source "$DIRNAME/setup/setup-core.bash"
 source "$DIRNAME/setup/setup-nodejs.bash"
 
 # Nala, C++, Python, Brew
-source "$DIRNAME/setup/setup-nala-cpp-python-brew."bash
+source "$DIRNAME/setup/setup-nala-cpp-python-brew.bash"
 
 # Rust
 source "$DIRNAME/setup/setup-rust.bash"

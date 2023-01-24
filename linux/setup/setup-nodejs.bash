@@ -9,7 +9,10 @@ sudo apt install -y --no-install-recommends nodejs
 
 # pnpm
 sudo npm install -g pnpm
-sudo pnpm setup
+pnpm setup
 export PNPM_HOME="$HOME/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 source "$HOME/.bashrc"
+
+# yarn
+pnpm install -g yarn
