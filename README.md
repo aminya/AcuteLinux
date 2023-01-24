@@ -7,6 +7,6 @@ Collection of the Bash scripts I use on Linux
 The script that sets up my Linux environment:
 
 ```bash
-./linux/setup-core.sh
+./linux/setup.sh
 ./linux/setup-desktop.sh
 ```
