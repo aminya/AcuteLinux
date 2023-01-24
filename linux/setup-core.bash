@@ -11,20 +11,18 @@ curl -fsSL https://deb.nodesource.com/setup_lts.x | bash -
 sudo apt install -y --no-install-recommends nodejs
 sudo npm install -g pnpm
 
-# setup-cpp https://github.com/aminya/setup-cpp
-setup_cpp_version="v0.24.1"
-curl -LJO "https://github.com/aminya/setup-cpp/releases/download/${setup_cpp_version}/setup_cpp.js"
+pnpm install -g setup-cpp
 
 # Nala
-sudo node ./setup_cpp.js --nala true
+sudo setup_cpp --nala true
 
 # Upgrade
 sudo nala upgrade -y
 
 # C++, Python, Brew
-sudo node ./setup_cpp.js --compiler llvm --cmake true --ninja true --cppcheck true --ccache true --vcpkg true --doxygen true --gcovr true --task true --python true --make true --bazel true
+sudo setup_cpp --compiler llvm --cmake true --ninja true --cppcheck true --ccache true --vcpkg true --doxygen true --gcovr true --task true --python true --make true --bazel true
 sudo chmod a+w "$HOME/.cpprc"
-node ./setup_cpp.js --brew true --sccache true
+setup_cpp --brew true --sccache true
 
 source "$HOME/.cpprc"
 
@@ -39,7 +37,7 @@ curl -LJO "https://static.rust-lang.org/rustup/dist/${rust_arch}/rustup-init"
 chmod +x rustup-init
 ./rustup-init -y --no-modify-path --default-toolchain none
 source "$HOME/.cargo/env"
-sudo chmod -R a+w $RUSTUP_HOME $CARGO_HOME
+sudo chmod -R a+w "$RUSTUP_HOME" "$CARGO_HOME"
 
 rust_toolchain_version="nightly-2022-10-17"
 rustup install $rust_toolchain_version
@@ -54,4 +52,3 @@ python3 -m pip install pylint mypy perflint -U
 
 # Re-Upgrade before cleanup
 sudo nala upgrade -y
-
