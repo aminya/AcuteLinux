@@ -11,11 +11,14 @@ source "$DIRNAME/setup/setup-core.bash"
 # Nodejs, NPM, PNPM
 source "$DIRNAME/setup/setup-nodejs.bash"
 
-# Nala, C++, Python, Brew
-source "$DIRNAME/setup/setup-nala-cpp-python-brew.bash"
+# Nala, C++, Python
+source "$DIRNAME/setup/setup-nala-cpp-python.bash"
 
 # Rust
 source "$DIRNAME/setup/setup-rust.bash"
+
+# Brew
+source "$DIRNAME/setup/setup-brew.bash"
 
 # Other
 source "$DIRNAME/setup/setup-other.bash"
