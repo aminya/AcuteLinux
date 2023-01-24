@@ -1,28 +1,35 @@
 #!/usr/bin/bash
 # -*- coding: utf-8 -*-
 set -e
+set -o pipefail
 
 # Basics
 sudo apt update -qq
 sudo apt install -y --no-install-recommends curl gnupg ca-certificates sudo
 
 # Nodejs
-curl -fsSL https://deb.nodesource.com/setup_lts.x | bash -
+curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo bash -
 sudo apt install -y --no-install-recommends nodejs
+
+# pnpm
 sudo npm install -g pnpm
+sudo pnpm setup
+export PNPM_HOME="$HOME/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+source "$HOME/.bashrc"
 
 pnpm install -g setup-cpp
 
 # Nala
-sudo setup_cpp --nala true
+sudo "$PNPM_HOME/setup-cpp" --nala true
 
 # Upgrade
 sudo nala upgrade -y
 
 # C++, Python, Brew
-sudo setup_cpp --compiler llvm --cmake true --ninja true --cppcheck true --ccache true --vcpkg true --doxygen true --gcovr true --task true --python true --make true --bazel true
+sudo "$PNPM_HOME/setup-cpp" --compiler llvm --cmake true --ninja true --cppcheck true --ccache true --vcpkg true --doxygen true --gcovr true --task true --python true --make true --bazel true
 sudo chmod a+w "$HOME/.cpprc"
-setup_cpp --brew true --sccache true
+"$PNPM_HOME/setup-cpp" --brew true --sccache true
 
 source "$HOME/.cpprc"
 
