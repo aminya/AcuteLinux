@@ -29,7 +29,7 @@ flatpak -y install flathub \
     com.github.tchx84.Flatseal \
     us.zoom.Zoom \
     com.discordapp.Discord \
-    com.spotify.Client
+    com.spotify.Client \
 
 # GitHub
 brew install gh
