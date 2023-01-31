@@ -16,3 +16,6 @@ sudo "$PNPM_HOME/setup-cpp" --compiler llvm --cmake true --ninja true --cppcheck
 sudo chmod a+w "$HOME/.cpprc"
 
 source "$HOME/.cpprc"
+
+# CmakeLang
+pip3 install -U cmakelang || echo "Failed to install cmakelang"
