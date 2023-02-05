@@ -15,6 +15,13 @@ chmod +x rustup-init
 source "$CARGO_HOME/env"
 sudo chmod -R a+w "$RUSTUP_HOME" "$CARGO_HOME"
 
+echo "# Rust
+export RUSTUP_HOME=\"$RUSTUP_HOME\"
+export CARGO_HOME=\"$CARGO_HOME\"
+export PATH=\"$CARGO_HOME/bin:\$PATH\"
+source \"$CARGO_HOME/env\"
+" >>"$HOME/.bashrc"
+
 rust_toolchain_version="nightly-2022-10-17"
 rustup install $rust_toolchain_version
 rustup component add "rustfmt" "clippy" "rust-src" "rustc" "rustc-dev" "llvm-tools-preview"
