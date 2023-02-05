@@ -25,3 +25,11 @@ source \"$CARGO_HOME/env\"
 rust_toolchain_version="nightly-2022-10-17"
 rustup install $rust_toolchain_version
 rustup component add "rustfmt" "clippy" "rust-src" "rustc" "rustc-dev" "llvm-tools-preview"
+
+# sccache
+"$PNPM_HOME/setup-cpp" --sccache true
+
+echo "
+[build]
+rustc-wrapper = \"sccache\"
+" >"$CARGO_HOME/config"

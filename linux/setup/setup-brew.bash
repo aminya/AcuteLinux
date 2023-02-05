@@ -5,8 +5,7 @@ set -o pipefail
 
 # Brew
 "$PNPM_HOME/setup-cpp" \
-    --brew true \
-    --sccache true
+    --brew true
 
 source "$HOME/.cpprc"
 
