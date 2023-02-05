@@ -22,14 +22,18 @@ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flat
 # Flatpaks
 flatpak -y install flathub \
     io.github.shiftey.Desktop \
-    net.blix.BlueMail \
     md.obsidian.Obsidian \
     com.github.eneshecan.WhatsAppForLinux \
-    org.telegram.desktop com.slack.Slack \
     com.github.tchx84.Flatseal \
+    org.telegram.desktop \
+    com.slack.Slack \
     us.zoom.Zoom \
     com.discordapp.Discord \
     com.spotify.Client \
+    org.kde.kclock \
+
+# Snaps (when the flatpak is not available/working)
+sudo snap install bluemail
 
 # GitHub
 brew install gh
