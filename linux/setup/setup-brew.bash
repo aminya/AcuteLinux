@@ -27,7 +27,11 @@ brew install \
     zoxide
 
 # Setup delta
-echo '
+
+# add the following string if ~/.gitconfig does not have '# Add delta to git'
+if ! grep -q '# Add delta to git' ~/.gitconfig; then
+    echo '
+# Add delta to git
 [core]
     pager = delta
 
@@ -45,3 +49,12 @@ echo '
 [diff]
     colorMoved = default
 ' >>~/.gitconfig
+fi
+
+# Setup mcfly
+if ! grep -q '# Add mcfly to git' ~/.gitconfig; then
+    echo '
+# Add mcfly to bash
+eval "$(mcfly init bash)"' >>~/.bashrc
+
+fi
