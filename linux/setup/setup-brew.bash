@@ -13,7 +13,7 @@ source "$HOME/.cpprc"
 brew install \
     bat \
     lsd \
-    delta \
+    git-delta \
     broot \
     fd \
     ripgrep \
@@ -25,3 +25,22 @@ brew install \
     btop \
     curlie \
     zoxide
+
+# Setup delta
+echo '
+[core]
+    pager = delta
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true
+    light = false
+
+[merge]
+    conflictstyle = diff3
+
+[diff]
+    colorMoved = default
+' >>~/.gitconfig
