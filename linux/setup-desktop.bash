@@ -40,4 +40,7 @@ sudo snap install bluemail
 
 # GitHub
 brew install gh
+# authenticate GitHub
 gh auth login
+# configure Git with GitHub desktop
+flatpak run io.github.shiftey.Desktop
