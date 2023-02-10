@@ -37,6 +37,7 @@ echo '
 [delta]
     navigate = true
     light = false
+    line-numbers = true
 
 [merge]
     conflictstyle = diff3
