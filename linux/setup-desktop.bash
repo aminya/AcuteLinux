@@ -14,6 +14,7 @@ rm -f packages.microsoft.gpg
 sudo nala update
 sudo nala install -y --no-install-recommends \
     apt-transport-https \
+    gnome-keyring \
     microsoft-edge-stable \
     code
 
