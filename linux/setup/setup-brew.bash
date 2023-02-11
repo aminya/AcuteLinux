@@ -26,7 +26,7 @@ brew install \
     curlie \
     zoxide
 
-# Setup delta
+# Set up delta
 
 # add the following string if ~/.gitconfig does not have '# Add delta to git'
 if ! grep -q '# Add delta to git' ~/.gitconfig; then
@@ -51,10 +51,15 @@ if ! grep -q '# Add delta to git' ~/.gitconfig; then
 ' >>~/.gitconfig
 fi
 
-# Setup mcfly
-if ! grep -q '# Add mcfly to git' ~/.gitconfig; then
+# Set up mcfly
+if ! grep -q '# Add mcfly to git' ~/.bashrc; then
     echo '
 # Add mcfly to bash
 eval "$(mcfly init bash)"' >>~/.bashrc
 
+fi
+
+# Set up broot
+if ! grep -q "source $HOME/.config/broot/launcher/bash/br" ~/.bashrc; then
+broot --install
 fi
