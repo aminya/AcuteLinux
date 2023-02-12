@@ -1,6 +1,5 @@
-#!/usr/bin/bash
+#!/usr/bin/bash -e
 # -*- coding: utf-8 -*-
-set -e
 set -o pipefail
 
 # Brew
@@ -24,7 +23,8 @@ brew install \
     tldr \
     btop \
     curlie \
-    zoxide
+    zoxide \
+    starship
 
 # Set up delta
 
@@ -61,5 +61,26 @@ fi
 
 # Set up broot
 if ! grep -q "source $HOME/.config/broot/launcher/bash/br" ~/.bashrc; then
-broot --install
+    broot --install
 fi
+
+# Set up starship
+if ! grep -q "# Add starship to bash" ~/.bashrc; then
+    echo '
+# Add starship to bash
+eval "$(starship init bash)"' >>~/.bashrc
+
+starship preset pastel-powerline > ~/.config/starship.toml
+fi
+
+# Nerd fonts
+PWD=$(pwd)
+FONT_NAME="FiraCode"
+curl -LJO "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/$FONT_NAME.zip"
+mkdir -p $HOME/.local/share/fonts
+mv "$FONT_NAME.zip" $HOME/.local/share/fonts/
+cd $HOME/.local/share/fonts/
+unzip "$FONT_NAME.zip"
+rm "$FONT_NAME.zip"
+fc-cache -fv
+cd $PWD
