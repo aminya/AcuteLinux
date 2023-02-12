@@ -70,7 +70,9 @@ if ! grep -q "# Add starship to bash" ~/.bashrc; then
 # Add starship to bash
 eval "$(starship init bash)"' >>~/.bashrc
 
-starship preset pastel-powerline > ~/.config/starship.toml
+# starship preset pastel-powerline > ~/.config/starship.toml
+cat ./linux/setup/starship.toml > ~/.config/starship.toml
+
 fi
 
 # Nerd fonts
