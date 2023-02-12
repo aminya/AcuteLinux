@@ -30,25 +30,7 @@ brew install \
 
 # add the following string if ~/.gitconfig does not have '# Add delta to git'
 if ! grep -q '# Add delta to git' ~/.gitconfig; then
-    echo '
-# Add delta to git
-[core]
-    pager = delta
-
-[interactive]
-    diffFilter = delta --color-only
-
-[delta]
-    navigate = true
-    light = false
-    line-numbers = true
-
-[merge]
-    conflictstyle = diff3
-
-[diff]
-    colorMoved = default
-' >>~/.gitconfig
+    cat ./linux/setup/delta.properties >>~/.gitconfig
 fi
 
 # Set up mcfly
@@ -70,8 +52,8 @@ if ! grep -q "# Add starship to bash" ~/.bashrc; then
 # Add starship to bash
 eval "$(starship init bash)"' >>~/.bashrc
 
-# starship preset pastel-powerline > ~/.config/starship.toml
-cat ./linux/setup/starship.toml > ~/.config/starship.toml
+    # starship preset pastel-powerline > ~/.config/starship.toml
+    cat ./linux/setup/starship.toml >~/.config/starship.toml
 
 fi
 
