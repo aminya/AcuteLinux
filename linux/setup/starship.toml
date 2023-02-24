@@ -25,12 +25,8 @@ $scala\
 $docker_context\
 [](fg:#06969A bg:#29577A)\
 $cmd_duration\
-$character
+$status
 """
-
-[character]
-success_symbol = "[](fg:#29577A)"
-error_symbol = "[](fg:#FF0000)"
 
 # Disable the blank line at the start of the prompt
 # add_newline = false
@@ -140,10 +136,17 @@ format = '[ $symbol ($version) ]($style)'
 
 [cmd_duration]
 style = "bg:#29577A"
-format = '[ ⏳  $duration ]($style)'
+format = '[ ⏳  $duration]($style)'
 
 min_time = 1000
 show_milliseconds = true
 
 min_time_to_notify = 20000
 show_notifications = true
+
+[status]
+disabled = false
+format = '[ $symbol $common_meaning$signal_name$maybe_int ]($style)[](fg:#29577A) '
+style = 'bg:#29577A'
+success_symbol = " "
+map_symbol = true
