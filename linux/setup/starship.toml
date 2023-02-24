@@ -24,9 +24,13 @@ $scala\
 [](fg:#B7B70A bg:#06969A)\
 $docker_context\
 [](fg:#06969A bg:#29577A)\
-$time\
-[ ](fg:#29577A)\
+$cmd_duration\
+$character
 """
+
+[character]
+success_symbol = "[](fg:#29577A)"
+error_symbol = "[](fg:#FF0000)"
 
 # Disable the blank line at the start of the prompt
 # add_newline = false
@@ -44,7 +48,7 @@ disabled = false
 # represents the current operating system
 [os]
 style = "bg:#003541 fg:#FFFFFF"
-disabled = true # Disabled by default
+disabled = true                 # Disabled by default
 
 [directory]
 style = "bg:#2472C8 fg:#FFFFFF"
@@ -134,8 +138,12 @@ symbol = " "
 style = "bg:#B7B70A fg:#000000"
 format = '[ $symbol ($version) ]($style)'
 
-[time]
-disabled = false
-time_format = "%R" # Hour:Minute Format
+[cmd_duration]
 style = "bg:#29577A"
-format = '[ ⏳  $time ]($style)'
+format = '[ ⏳  $duration ]($style)'
+
+min_time = 1000
+show_milliseconds = true
+
+min_time_to_notify = 20000
+show_notifications = true
