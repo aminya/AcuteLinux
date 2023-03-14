@@ -34,6 +34,10 @@ flatpak -y install flathub \
     com.spotify.Client \
     org.kde.kclock
 
+# LibreOffice
+sudo nala purge libreoffice*
+flatpak -y install org.libreoffice.LibreOffice
+
 # Snaps (when the flatpak is not available/working)
 sudo snap install bluemail
 
