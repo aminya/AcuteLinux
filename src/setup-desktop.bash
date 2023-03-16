@@ -39,6 +39,7 @@ sudo nala purge libreoffice*
 flatpak -y install org.libreoffice.LibreOffice
 
 # Snaps (when the flatpak is not available/working)
+sudo nala purge thunderbird*
 sudo snap install bluemail
 
 # GitHub
