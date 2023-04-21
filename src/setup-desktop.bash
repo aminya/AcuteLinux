@@ -20,10 +20,16 @@ sudo nala install -y --no-install-recommends \
 sudo nala install -y --no-install-recommends flatpak plasma-discover-backend-flatpak
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
+# GitHub Desktop
+wget -qO - https://apt.packages.shiftkey.dev/gpg.key | gpg --dearmor | sudo tee /usr/share/keyrings/shiftkey-packages.gpg > /dev/null
+sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/shiftkey-packages.gpg] https://apt.packages.shiftkey.dev/ubuntu/ any main" > /etc/apt/sources.list.d/shiftkey-packages.list'
+
+sudo nala update
+sudo nala install -y --no-install-recommends github-desktop
+
 # Flatpaks
 flatpak -y install flathub \
     com.microsoft.Edge \
-    io.github.shiftey.Desktop \
     md.obsidian.Obsidian \
     com.github.eneshecan.WhatsAppForLinux \
     com.github.tchx84.Flatseal \
@@ -47,4 +53,3 @@ brew install gh
 # authenticate GitHub
 gh auth login
 # configure Git with GitHub desktop
-flatpak run io.github.shiftey.Desktop
