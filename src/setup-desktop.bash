@@ -48,6 +48,10 @@ flatpak -y install org.libreoffice.LibreOffice
 sudo nala purge thunderbird*
 sudo snap install bluemail
 
+# Kate for git
+sudo nala install -y --no-install-recommends hspell
+git config --global core.editor "kate -b"
+
 # GitHub
 brew install gh
 # authenticate GitHub
