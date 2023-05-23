@@ -2,6 +2,8 @@
 # -*- coding: utf-8 -*-
 set -e
 
+DIRNAME="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+
 source "$HOME/.cpprc"
 
 # VsCode
@@ -52,8 +54,8 @@ sudo snap install bluemail
 sudo nala install -y --no-install-recommends hspell
 git config --global core.editor "kate -b"
 
-# speech-dispatcher
-sudo nala install -y --no-install-recommends speech-dispatcher
+# Speach
+source "$DIRNAME/setup/setup-speach.bash"
 
 # GitHub
 brew install gh
