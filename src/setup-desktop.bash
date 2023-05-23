@@ -52,6 +52,9 @@ sudo snap install bluemail
 sudo nala install -y --no-install-recommends hspell
 git config --global core.editor "kate -b"
 
+# speech-dispatcher
+sudo nala install -y --no-install-recommends speech-dispatcher
+
 # GitHub
 brew install gh
 # authenticate GitHub
