@@ -13,6 +13,8 @@ pnpm setup
 export PNPM_HOME="$HOME/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 source "$HOME/.bashrc"
+PNPM_COMPLETIONS="$HOME/.local/share/bash-completion/completions/"
+pnpm install-completion bash  >> "$PNPM_COMPLETIONS/pnpm"
 
 # yarn
 pnpm install -g yarn
