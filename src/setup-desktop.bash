@@ -16,7 +16,8 @@ sudo nala update
 sudo nala install -y \
     apt-transport-https \
     gnome-keyring \
-    code
+    code \
+    code-insiders
 
 # Flatpak for KDE
 sudo nala install -y --no-install-recommends flatpak plasma-discover-backend-flatpak
