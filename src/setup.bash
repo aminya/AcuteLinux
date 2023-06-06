@@ -26,6 +26,9 @@ source "$DIRNAME/setup/setup-other.bash"
 # Python Deps
 source "$DIRNAME/setup/setup-python.bash"
 
+# Docker
+source "$DIRNAME/setup/setup-docker.bash"
+
 # Re-Upgrade
 sudo nala upgrade -y
 
