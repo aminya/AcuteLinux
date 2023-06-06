@@ -22,7 +22,7 @@ export PATH=\"$CARGO_HOME/bin:\$PATH\"
 source \"$CARGO_HOME/env\"
 " >>"$HOME/.bashrc"
 
-rust_toolchain_version="nightly-2022-10-17"
+rust_toolchain_version="nightly-2023-03-17"
 rustup install $rust_toolchain_version
 rustup component add "rustfmt" "clippy" "rust-src" "rustc" "rustc-dev" "llvm-tools-preview"
 
