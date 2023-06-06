@@ -38,3 +38,5 @@ echo "
 [build]
 rustc-wrapper = \"sccache\"
 " >"$CARGO_HOME/config"
+
+source "$HOME/.bashrc"
