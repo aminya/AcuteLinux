@@ -1,5 +1,4 @@
 #!/usr/bin/bash
-# -*- coding: utf-8 -*-
 set -e
 set -o pipefail
 
@@ -28,6 +27,9 @@ source "$DIRNAME/setup/setup-python.bash"
 
 # Docker
 source "$DIRNAME/setup/setup-docker.bash"
+
+# CLI tools
+source "$DIRNAME/setup/setup-cli.bash"
 
 # Re-Upgrade
 sudo nala upgrade -y

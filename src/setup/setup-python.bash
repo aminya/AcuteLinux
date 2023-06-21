@@ -1,5 +1,4 @@
 #!/usr/bin/bash
-# -*- coding: utf-8 -*-
 set -e
 set -o pipefail
 
@@ -11,5 +10,4 @@ sudo nala install -y \
     python3-poetry
 python3 -m pip install -U \
     pylint \
-    mypy \
     perflint

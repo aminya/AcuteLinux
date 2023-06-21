@@ -1,5 +1,4 @@
 #!/usr/bin/bash
-# -*- coding: utf-8 -*-
 set -e
 set -o pipefail
 
