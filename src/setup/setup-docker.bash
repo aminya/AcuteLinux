@@ -1,6 +1,4 @@
-#!/usr/bin/bash
-# -*- coding: utf-8 -*-
-set -e
+#!/usr/bin/bash -e
 set -o pipefail
 
 sudo nala remove docker.io docker-doc docker-compose podman-docker containerd runc

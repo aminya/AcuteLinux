@@ -28,6 +28,9 @@ source "$DIRNAME/setup/setup-python.bash"
 # Docker
 source "$DIRNAME/setup/setup-docker.bash"
 
+# Git
+source "$DIRNAME/setup/setup-git.bash"
+
 # CLI tools
 source "$DIRNAME/setup/setup-cli.bash"
 
