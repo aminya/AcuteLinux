@@ -8,20 +8,20 @@ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flat
 # Flatpaks
 flatpak -y install flathub \
     com.microsoft.Edge \
-    md.obsidian.Obsidian \
+    org.mozilla.Thunderbird \
     com.github.eneshecan.WhatsAppForLinux \
-    com.github.tchx84.Flatseal \
     org.telegram.desktop \
     com.slack.Slack \
     us.zoom.Zoom \
+    com.github.tchx84.Flatseal \
     com.discordapp.Discord \
     com.spotify.Client \
-    org.kde.kclock
+    md.obsidian.Obsidian \
+    org.kde.kclock \
+    org.libreoffice.LibreOffice
 
-# LibreOffice
-sudo nala purge libreoffice*
-flatpak -y install org.libreoffice.LibreOffice
+# Use flatpak instead of apt
+sudo nala purge libreoffice* thunderbird*
 
 # Snaps (when the flatpak is not available/working)
-sudo nala purge thunderbird*
 sudo snap install bluemail
