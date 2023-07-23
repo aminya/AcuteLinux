@@ -13,6 +13,7 @@ export PNPM_HOME="$HOME/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 
 PNPM_COMPLETIONS="$HOME/.local/share/bash-completion/completions/"
+mkdir -p "$PNPM_COMPLETIONS"
 pnpm install-completion bash >>"$PNPM_COMPLETIONS/pnpm"
 
 source "$HOME/.bashrc"
