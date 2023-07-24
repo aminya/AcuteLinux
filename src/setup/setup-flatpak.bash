@@ -22,6 +22,3 @@ flatpak -y install flathub \
 
 # Use flatpak instead of apt
 sudo nala purge libreoffice* thunderbird*
-
-# Snaps (when the flatpak is not available/working)
-sudo snap install bluemail
