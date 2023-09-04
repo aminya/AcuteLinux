@@ -5,6 +5,9 @@ DIRNAME="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 
 source "$HOME/.cpprc"
 
+# Edge
+source "$DIRNAME/setup/setup-edge.bash"
+
 # VSCode
 source "$DIRNAME/setup/setup-vcscode.bash"
 
