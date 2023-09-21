@@ -9,9 +9,15 @@ sudo rm -rf /tmp/*
 
 docker system prune -f
 docker system prune -f --volumes
+
+# remove all dangling images
 docker image prune -f
-exited_images=$(docker ps --filter status=exited -q)
-if [ ! -z "$exited_images" ]; then
-    docker rm $exited_images
+
+# remove all none tagged
+non_tagged=$(docker images -a | grep none | awk '{ print $3; }')
+if [ ! -z "$non_tagged" ]; then
+    docker rmi $non_tagged
 fi
-docker images -a | grep none | awk '{ print $3; }' | xargs docker rmi --force
+
+# find the docker images that have the same repository but different tags and remove the older ones
+docker images -a --format '{{.Repository}}:{{.Tag}}' | awk -F: '{ print $1; }' | uniq -d | xargs -I {name} docker images --format '{{.ID}} {{.CreatedSince}}' {name} | head -n -1 | awk '{ print $1; }' | xargs -I {id} docker rmi {id}
