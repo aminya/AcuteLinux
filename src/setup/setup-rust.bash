@@ -23,10 +23,10 @@ source \"$CARGO_HOME/env\"
 
 RUSTUP_COMPLETIONS="$HOME/.local/share/bash-completion/completions/"
 mkdir -p "$RUSTUP_COMPLETIONS"
-rustup completions bash >> "$RUSTUP_COMPLETIONS/rusup"
+rustup completions bash >> "$RUSTUP_COMPLETIONS/rustup"
 rustup completions bash cargo >> "$RUSTUP_COMPLETIONS/cargo"
 
-rust_toolchain_version="nightly-2023-03-17"
+rust_toolchain_version="nightly-2023-10-16"
 rustup install $rust_toolchain_version
 rustup component add "rustfmt" "clippy" "rust-src" "rustc" "rustc-dev" "llvm-tools-preview"
 
