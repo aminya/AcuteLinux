@@ -1,5 +1,8 @@
 # agnoster like theme
 
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
 format = """
 [](#003541)\
 $os\
@@ -25,7 +28,9 @@ $scala\
 $docker_context\
 [](fg:#06969A bg:#29577A)\
 $cmd_duration\
-$status
+$status\
+$time
+[>](#003541) \
 """
 
 # Disable the blank line at the start of the prompt
@@ -34,7 +39,7 @@ $status
 # You can also replace your username with a neat symbol like   or disable this
 # and use the os module below
 [username]
-show_always = true
+show_always = false
 style_user = "bg:#003541"
 style_root = "bg:#003541"
 format = '[$user ]($style)'
@@ -137,10 +142,8 @@ format = '[ $symbol ($version) ]($style)'
 [cmd_duration]
 style = "bg:#29577A"
 format = '[ ⏳  $duration]($style)'
-
 min_time = 1000
 show_milliseconds = true
-
 min_time_to_notify = 20000
 show_notifications = true
 
