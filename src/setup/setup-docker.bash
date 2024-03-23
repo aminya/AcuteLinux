@@ -18,10 +18,10 @@ sudo nala update
 sudo nala install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
 # User
-sudo groupadd docker
-sudo usermod -aG docker $USER
-newgrp docker
-chmod 777 /var/run/docker.sock
+sudo groupadd docker && \
+sudo usermod -aG docker $USER && \
+newgrp docker && \
+chmod 777 /var/run/docker.sock || true
 
 # Startup
 sudo systemctl enable docker.service
