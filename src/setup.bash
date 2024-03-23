@@ -25,6 +25,9 @@ source "$DIRNAME/setup/setup-other.bash"
 # Python Deps
 source "$DIRNAME/setup/setup-python.bash"
 
+# Go
+source "$DIRNAME/setup/setup-go.bash"
+
 # Docker
 source "$DIRNAME/setup/setup-docker.bash"
 
