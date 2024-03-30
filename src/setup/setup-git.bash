@@ -8,10 +8,10 @@ sudo nala install -y git git-lfs
 if [[ "$DESKTOP" -eq 1 ]]; then
     wget -qO - https://apt.packages.shiftkey.dev/gpg.key | gpg --dearmor | sudo tee /usr/share/keyrings/shiftkey-packages.gpg >/dev/null
     sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/shiftkey-packages.gpg] https://apt.packages.shiftkey.dev/ubuntu/ any main" > /etc/apt/sources.list.d/shiftkey-packages.list'
-fi
 
-sudo nala update
-sudo nala install -y github-desktop
+    sudo nala update
+    sudo nala install -y github-desktop
+fi
 
 # Kate for git
 if [[ "$DESKTOP" -eq 1 ]]; then
