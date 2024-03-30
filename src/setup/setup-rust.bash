@@ -26,7 +26,7 @@ mkdir -p "$RUSTUP_COMPLETIONS"
 rustup completions bash >> "$RUSTUP_COMPLETIONS/rustup"
 rustup completions bash cargo >> "$RUSTUP_COMPLETIONS/cargo"
 
-rust_toolchain_version="nightly-2023-10-16"
+rust_toolchain_version="nightly"
 rustup install $rust_toolchain_version
 rustup component add "rustfmt" "clippy" "rust-src" "rustc" "rustc-dev" "llvm-tools-preview"
 
